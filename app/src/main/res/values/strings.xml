@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Focusr</string>
+
+    <string-array name="list_preference_entries">
+        <item>Facebook</item>
+        <item>Snapchat</item>
+        <item>Pinterest</item>
+        <item>Chrome</item>
+        <item>Materialistic</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>com.facebook.katana</item>
+        <item>com.snapchat.android</item>
+        <item>com.pinterest</item>
+        <item>com.android.chrome</item>
+        <item>io.github.hidroh.materialistic</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+
+    <string name="description">Helps you track app usage</string>
+</resources>

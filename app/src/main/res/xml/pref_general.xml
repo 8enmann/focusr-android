@@ -1,0 +1,33 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference android:title="Tap here to enable in Settings" >
+        <intent android:action="android.settings.ACCESSIBILITY_SETTINGS" />
+    </Preference>
+    <EditTextPreference
+        android:defaultValue="10"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Total time per day (mins)"
+        android:key="total_time_per_day" />
+
+    <EditTextPreference
+        android:defaultValue="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Progress interval (mins)"
+        android:key="progress_interval" />
+
+    <MultiSelectListPreference
+        android:dialogTitle="Apps to track"
+        android:key="apps"
+        android:title="Apps to track"
+        android:entries="@array/list_preference_entries"
+        android:entryValues="@array/list_preference_entry_values"
+        android:defaultValue="@array/multi_select_list_preference_default_value"
+        />
+
+    <!-- TODO: add number picker for max time
+    http://stackoverflow.com/questions/20758986/android-preferenceactivity-dialog-with-number-picker
+    -->
+    <!-- add disable toggle -->
+</PreferenceScreen>
