@@ -93,18 +93,19 @@ public class ChromeBlockerService extends AccessibilityService {
     public void onAccessibilityEvent(AccessibilityEvent event) {
         final int eventType = event.getEventType();
         String eventText = null;
-        if (event.getPackageName().toString().isEmpty()) {
+        CharSequence packageName = event.getPackageName();
+        if (packageName == null || packageName.toString().isEmpty()) {
             Log.i(getPackageName(), event.getClassName() + " " + AccessibilityEvent.eventTypeToString(event.getEventType()));
             // Ignore these events since they don't seem to trigger on anything important.
             return;
         }
 
-        if (getPackagesToTrack().contains(event.getPackageName().toString())) {
+        if (getPackagesToTrack().contains(packageName.toString())) {
             startTimer(event.getEventTime());
             return;
         }
-        if (!event.getPackageName().equals("com.android.chrome")) {
-            stopTimer(event.getEventTime(), event.getPackageName().toString());
+        if (!packageName.equals("com.android.chrome")) {
+            stopTimer(event.getEventTime(), packageName.toString());
         }
 
         AccessibilityNodeInfo source = event.getSource();
